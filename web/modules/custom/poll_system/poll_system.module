@@ -1,0 +1,64 @@
+<?php
+
+/**
+ * @file
+ * Contains poll_system.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function poll_system_help($route_name, RouteMatchInterface $route_match)
+{
+  switch ($route_name) {
+    case 'help.page.poll_system':
+      $output = '<h1>' . t('About') . '</h1>';
+      $output .= '<p>' . t('The Poll System module allows administrators to create polls that users can vote on.') . '</p>';
+      return $output;
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function poll_system_theme()
+{
+  return [
+    'poll_system' => [
+      'variables' => [
+        'poll' => NULL,
+        'options' => [],
+        'results' => NULL,
+        'show_results' => FALSE,
+        'poll_enabled' => TRUE,
+        'voted' => FALSE,
+      ],
+      'template' => 'poll-system',
+    ],
+    'poll_system_results' => [
+      'variables' => [
+        'poll' => NULL,
+        'results' => [],
+        'total_votes' => 0,
+      ],
+      'template' => 'poll-system-results',
+    ],
+    'poll_system_list' => [
+      'variables' => [
+        'polls' => [],
+        'poll_enabled' => TRUE,
+      ],
+      'template' => 'poll-system-list',
+    ],
+  ];
+}
+
+/**
+ * Implements hook_page_attachments().
+ */
+function poll_system_page_attachments(array &$attachments)
+{
+  $attachments['#attached']['library'][] = 'poll_system/poll_system';
+}

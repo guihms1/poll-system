@@ -1,0 +1,86 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a poll.
+ *
+ * Available variables:
+ * - poll: The poll entity.
+ * - options: An array of poll options.
+ * - results: The poll results or NULL if not available.
+ * - show_results: Whether to show results.
+ * - poll_enabled: Whether the poll system is enabled.
+ * - voted: Whether the user has voted.
+ */
+#}
+
+<div class="poll-system" id="poll-system-{{ poll.id.value }}">
+  <h2>{{ poll.label }}</h2>
+
+  <form action="{{ path('poll_system.vote', {'poll': poll.id.value}) }}" method="post">
+    <div class="poll-system__options">
+      {% for option in options %}
+        <div class="poll-system__option">
+          <label>
+            <input type="radio" name="option" value="{{ option.id.value }}" required
+              {% if not poll_enabled %}disabled{% endif %} />
+            <span class="poll-system__option-title">{{ option.title.value }}</span>
+
+            {% set image = option.image.entity %}
+            {% if image %}
+              <div class="poll-system__option-image">
+                <img width="100" src="{{ file_url(image.uri.value) }}" alt="{{ image.alt.value|default('') }}">
+              </div>
+            {% endif %}
+
+            {% if option.getDescription %}
+              <div class="poll-system__option-description">
+                {{ option.getDescription|raw }}
+              </div>
+            {% endif %}
+          </label>
+        </div>
+      {% endfor %}
+    </div>
+
+    <div class="poll-system__submit">
+      <input type="submit" value="{{ 'Vote'|t }}" class="button" {% if not poll_enabled %}disabled{% endif %} />
+    </div>
+
+    {% if not poll_enabled %}
+      <div class="poll-system__disabled-message" style="margin-top: 10px; color: #999;">
+        {{ 'Poll system is currently disabled.'|t }}
+      </div>
+    {% endif %}
+  </form>
+
+  {% if show_results and results %}
+    <div class="poll-system__results">
+      <h1>{{ 'Results'|t }}</h1>
+
+      <table class="poll-system__results-table" style="width: 100%; border-collapse: collapse; margin-top: 20px;">
+        <tr style="background-color: #f0f0f0;">
+          <th style="border: 1px solid #cccccc; padding: 10px; text-align: left;">Option</th>
+          <th style="border: 1px solid #cccccc; padding: 10px; text-align: center;">Votes</th>
+          <th style="border: 1px solid #cccccc; padding: 10px; text-align: center;">Percentage</th>
+        </tr>
+        {% for result in results.options %}
+          <tr>
+            <td style="border: 1px solid #cccccc; padding: 10px;"><b>{{ result.title }}</b></td>
+            <td style="border: 1px solid #cccccc; padding: 10px; text-align: center;">{{ result.votes }}</td>
+            <td style="border: 1px solid #cccccc; padding: 10px; text-align: center;">{{ result.percentage }}%</td>
+          </tr>
+        {% endfor %}
+      </table>
+
+      <div class="poll-system__total-votes">
+        {{ 'Total votes:'|t }} {{ results.total_votes }}
+      </div>
+    </div>
+  {% endif %}
+
+  <div style="margin-top: 24px;">
+    <a href="{{ path('poll_system.public_list') }}" style="text-decoration: none; color: #0074d9;">
+      ← {{ 'See poll list'|t }}
+    </a>
+  </div>
+</div>

@@ -1,0 +1,4 @@
+services:
+  poll_system.poll_service:
+    class: Drupal\poll_system\Service\PollSystemService
+    arguments: [ '@database', '@entity_type.manager', '@config.factory', '@state' ]

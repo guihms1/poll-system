@@ -1,0 +1,6 @@
+poll_system.admin_content.polls:
+  route_name: poll_system.list
+  title: 'Manage Polls'
+  appears_on:
+    - system.admin_content
+  weight: 20

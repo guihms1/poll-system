@@ -1,0 +1,20 @@
+name: poll-system
+recipe: drupal10
+config:
+  webroot: web
+  php: 8.2
+  composer_version: 2-latest
+
+services:
+  database:
+    type: mysql:5.7
+  appserver:
+    overrides:
+      ports:
+        - "8082:82"
+
+tooling:
+  unit-test:
+    service: appserver
+    description: Run Drupal tests for poll_system
+    cmd: php ./web/core/scripts/run-tests.sh --url http://poll-system.lndo.site:8000 --php /usr/local/bin/php --module poll_system --verbose --sqlite /tmp/test.sqlite

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="Drupal\Tests\poll_system\Functional\Rest\PollSystemResourceTest" file="/app/web/modules/custom/poll_system/tests/src/Functional/Rest/PollSystemResourceTest.php" tests="2" assertions="4" errors="2" warnings="0" failures="0" skipped="0" time="5.016096">
+    <testcase name="testGetPolls" class="Drupal\Tests\poll_system\Functional\Rest\PollSystemResourceTest" classname="Drupal.Tests.poll_system.Functional.Rest.PollSystemResourceTest" file="/app/web/modules/custom/poll_system/tests/src/Functional/Rest/PollSystemResourceTest.php" line="38" assertions="2" time="2.576973">
+      <error type="TypeError">Drupal\Tests\poll_system\Functional\Rest\PollSystemResourceTest::testGetPolls
+TypeError: Behat\Mink\Session::setRequestHeader(): Argument #2 ($value) must be of type string, array given, called in /app/web/core/tests/Drupal/Tests/UiHelperTrait.php on line 272
+
+/app/vendor/behat/mink/src/Session.php:199
+/app/web/core/tests/Drupal/Tests/UiHelperTrait.php:272
+/app/web/modules/custom/poll_system/tests/src/Functional/Rest/PollSystemResourceTest.php:71
+/app/vendor/phpunit/phpunit/src/Framework/TestResult.php:729</error>
+    </testcase>
+    <testcase name="testPostVote" class="Drupal\Tests\poll_system\Functional\Rest\PollSystemResourceTest" classname="Drupal.Tests.poll_system.Functional.Rest.PollSystemResourceTest" file="/app/web/modules/custom/poll_system/tests/src/Functional/Rest/PollSystemResourceTest.php" line="84" assertions="2" time="2.439124">
+      <error type="InvalidArgumentException">Drupal\Tests\poll_system\Functional\Rest\PollSystemResourceTest::testPostVote
+InvalidArgumentException: Anonymous or authenticated role ID must not be assigned manually.
+
+/app/web/core/modules/user/src/Entity/User.php:205
+/app/web/modules/custom/poll_system/tests/src/Functional/Rest/PollSystemResourceTest.php:91
+/app/vendor/phpunit/phpunit/src/Framework/TestResult.php:729</error>
+    </testcase>
+  </testsuite>
+</testsuites>

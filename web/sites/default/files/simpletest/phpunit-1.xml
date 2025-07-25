@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="Drupal\Tests\poll_system\Functional\Rest\PollSystemResourceTest" file="/app/web/modules/custom/poll_system/tests/src/Functional/Rest/PollSystemResourceTest.php" tests="2" assertions="2" errors="2" warnings="0" failures="0" skipped="0" time="9.770271">
+    <testcase name="testGetPolls" class="Drupal\Tests\poll_system\Functional\Rest\PollSystemResourceTest" classname="Drupal.Tests.poll_system.Functional.Rest.PollSystemResourceTest" file="/app/web/modules/custom/poll_system/tests/src/Functional/Rest/PollSystemResourceTest.php" line="57" assertions="1" time="4.878172">
+      <error type="GuzzleHttp\Exception\ConnectException">Drupal\Tests\poll_system\Functional\Rest\PollSystemResourceTest::testGetPolls
+GuzzleHttp\Exception\ConnectException: cURL error 7: Failed to connect to poll-system.lndo.site port 8000 after 6 ms: Couldn't connect to server (see https://curl.haxx.se/libcurl/c/libcurl-errors.html) for http://poll-system.lndo.site:8000
+
+/app/vendor/guzzlehttp/guzzle/src/Handler/CurlFactory.php:275
+/app/vendor/guzzlehttp/guzzle/src/Handler/CurlFactory.php:205
+/app/vendor/guzzlehttp/guzzle/src/Handler/CurlFactory.php:157
+/app/vendor/guzzlehttp/guzzle/src/Handler/CurlHandler.php:47
+/app/vendor/guzzlehttp/guzzle/src/Handler/Proxy.php:28
+/app/vendor/guzzlehttp/guzzle/src/Handler/Proxy.php:48
+/app/web/core/tests/Drupal/Tests/BrowserHtmlDebugTrait.php:176
+/app/web/core/lib/Drupal/Core/Test/HttpClientMiddleware/TestHttpClientMiddleware.php:29
+/app/vendor/guzzlehttp/guzzle/src/PrepareBodyMiddleware.php:35
+/app/vendor/guzzlehttp/guzzle/src/Middleware.php:38
+/app/vendor/guzzlehttp/guzzle/src/RedirectMiddleware.php:55
+/app/vendor/guzzlehttp/guzzle/src/Middleware.php:66
+/app/vendor/guzzlehttp/guzzle/src/HandlerStack.php:75
+/app/vendor/guzzlehttp/guzzle/src/Client.php:333
+/app/vendor/guzzlehttp/guzzle/src/Client.php:169
+/app/vendor/guzzlehttp/guzzle/src/Client.php:189
+/app/web/core/tests/Drupal/Tests/DrupalTestBrowser.php:139
+/app/vendor/symfony/browser-kit/AbstractBrowser.php:385
+/app/vendor/behat/mink-browserkit-driver/src/BrowserKitDriver.php:122
+/app/vendor/behat/mink/src/Session.php:175
+/app/web/core/tests/Drupal/Tests/BrowserTestBase.php:275
+/app/web/core/tests/Drupal/Tests/BrowserTestBase.php:245
+/app/web/core/tests/Drupal/Tests/BrowserTestBase.php:364
+/app/web/modules/custom/poll_system/tests/src/Functional/Rest/PollSystemResourceTest.php:40
+/app/vendor/phpunit/phpunit/src/Framework/TestResult.php:729</error>
+    </testcase>
+    <testcase name="testPostVote" class="Drupal\Tests\poll_system\Functional\Rest\PollSystemResourceTest" classname="Drupal.Tests.poll_system.Functional.Rest.PollSystemResourceTest" file="/app/web/modules/custom/poll_system/tests/src/Functional/Rest/PollSystemResourceTest.php" line="108" assertions="1" time="4.892100">
+      <error type="GuzzleHttp\Exception\ConnectException">Drupal\Tests\poll_system\Functional\Rest\PollSystemResourceTest::testPostVote
+GuzzleHttp\Exception\ConnectException: cURL error 7: Failed to connect to poll-system.lndo.site port 8000 after 2 ms: Couldn't connect to server (see https://curl.haxx.se/libcurl/c/libcurl-errors.html) for http://poll-system.lndo.site:8000
+
+/app/vendor/guzzlehttp/guzzle/src/Handler/CurlFactory.php:275
+/app/vendor/guzzlehttp/guzzle/src/Handler/CurlFactory.php:205
+/app/vendor/guzzlehttp/guzzle/src/Handler/CurlFactory.php:157
+/app/vendor/guzzlehttp/guzzle/src/Handler/CurlHandler.php:47
+/app/vendor/guzzlehttp/guzzle/src/Handler/Proxy.php:28
+/app/vendor/guzzlehttp/guzzle/src/Handler/Proxy.php:48
+/app/web/core/tests/Drupal/Tests/BrowserHtmlDebugTrait.php:176
+/app/web/core/lib/Drupal/Core/Test/HttpClientMiddleware/TestHttpClientMiddleware.php:29
+/app/vendor/guzzlehttp/guzzle/src/PrepareBodyMiddleware.php:35
+/app/vendor/guzzlehttp/guzzle/src/Middleware.php:38
+/app/vendor/guzzlehttp/guzzle/src/RedirectMiddleware.php:55
+/app/vendor/guzzlehttp/guzzle/src/Middleware.php:66
+/app/vendor/guzzlehttp/guzzle/src/HandlerStack.php:75
+/app/vendor/guzzlehttp/guzzle/src/Client.php:333
+/app/vendor/guzzlehttp/guzzle/src/Client.php:169
+/app/vendor/guzzlehttp/guzzle/src/Client.php:189
+/app/web/core/tests/Drupal/Tests/DrupalTestBrowser.php:139
+/app/vendor/symfony/browser-kit/AbstractBrowser.php:385
+/app/vendor/behat/mink-browserkit-driver/src/BrowserKitDriver.php:122
+/app/vendor/behat/mink/src/Session.php:175
+/app/web/core/tests/Drupal/Tests/BrowserTestBase.php:275
+/app/web/core/tests/Drupal/Tests/BrowserTestBase.php:245
+/app/web/core/tests/Drupal/Tests/BrowserTestBase.php:364
+/app/web/modules/custom/poll_system/tests/src/Functional/Rest/PollSystemResourceTest.php:40
+/app/vendor/phpunit/phpunit/src/Framework/TestResult.php:729</error>
+    </testcase>
+  </testsuite>
+</testsuites>

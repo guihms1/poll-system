@@ -1,0 +1,21 @@
+uuid: 7084d87d-6125-4d18-a436-1657134f9db0
+langcode: en
+status: true
+dependencies:
+  module:
+    - poll_system
+    - serialization
+    - user
+_core:
+  default_config_hash: CE5bsbz6EEFnerLsR2BSNFSEabMex3dhUQGqdFs-mBk
+id: poll_system_resource
+plugin_id: poll_system_resource
+granularity: resource
+configuration:
+  methods:
+    - GET
+    - POST
+  formats:
+    - json
+  authentication:
+    - cookie

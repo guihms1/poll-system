@@ -1,0 +1,20 @@
+uuid: b453dd9b-d336-4307-9095-d01c6e85398a
+langcode: en
+status: true
+dependencies:
+  module:
+    - serialization
+    - poll_system
+    - user
+id: rest.resource.poll_system_resource
+plugin_id: poll_system_resource
+granularity: resource
+configuration:
+  methods:
+    - GET
+    - POST
+  formats:
+    - json
+  authentication:
+    - basic_auth
+    - cookie

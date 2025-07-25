@@ -1,0 +1,19 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - serialization
+    - poll_system
+    - user
+id: poll_system_resource
+plugin_id: poll_system_resource
+granularity: resource
+configuration:
+  methods:
+    - GET
+    - POST
+  formats:
+    - json
+  authentication:
+    - basic_auth
+    - cookie

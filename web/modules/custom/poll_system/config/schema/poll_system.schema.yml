@@ -1,0 +1,14 @@
+poll_system.settings:
+  type: config_object
+  label: 'Poll System settings'
+  mapping:
+    enabled:
+      type: boolean
+      label: 'Enabled'
+    api:
+      type: mapping
+      label: 'API settings'
+      mapping:
+        enabled:
+          type: boolean
+          label: 'API enabled'

@@ -1,0 +1,49 @@
+# Dependency directories
+vendor/
+web/core/*
+
+# Sensitive configuration
+sites/*/settings*.php
+sites/*/services*.yml
+
+# User-generated content
+sites/*/files
+sites/*/private
+
+# Multi-site test environment
+sites/simpletest
+
+# Composer files (development)
+composer.phar
+composer.lock
+
+# Environment files
+.env
+
+# Build and coverage directories
+build/
+coverage/
+
+# Compiled assets
+web/themes/custom/*/css/style.css
+web/themes/custom/*/js/script.js
+
+# Local development tools
+.lando.local.yml
+
+# Logs
+logs/
+*.log
+
+# Temp and swap files
+*.tmp
+*.swp
+*.swo
+*~
+*.bak
+
+# IDE/editor files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

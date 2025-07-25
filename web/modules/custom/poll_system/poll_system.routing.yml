@@ -1,0 +1,140 @@
+poll_system.settings:
+  path: '/admin/config/content/poll-system'
+  defaults:
+    _form: '\Drupal\poll_system\Form\PollSystemSettingsForm'
+    _title: 'Poll System Settings'
+  requirements:
+    _permission: 'administer poll system'
+
+poll_system.list:
+  path: '/admin/content/poll-system'
+  defaults:
+    _controller: '\Drupal\poll_system\Controller\PollSystemController::pollList'
+    _title: 'Polls'
+  requirements:
+    _permission: 'administer poll system'
+
+poll_system.add:
+  path: '/admin/content/poll-system/add'
+  defaults:
+    _form: '\Drupal\poll_system\Form\PollForm'
+    _title: 'Add poll'
+  requirements:
+    _permission: 'administer poll system'
+
+poll_system.edit:
+  path: '/admin/content/poll-system/{poll}/edit'
+  defaults:
+    _form: '\Drupal\poll_system\Form\PollForm'
+    _title: 'Edit poll'
+  requirements:
+    _permission: 'administer poll system'
+
+poll_system.delete:
+  path: '/admin/content/poll-system/{poll}/delete'
+  defaults:
+    _form: '\Drupal\poll_system\Form\PollDeleteForm'
+    _title: 'Delete poll'
+  requirements:
+    _permission: 'administer poll system'
+  options:
+    parameters:
+      poll:
+        type: entity:poll_system
+
+poll_system.option_list:
+  path: '/admin/content/poll-system/{poll}/options'
+  defaults:
+    _controller: '\Drupal\poll_system\Controller\PollSystemController::optionList'
+    _title: 'Poll options'
+  requirements:
+    _permission: 'administer poll system'
+  options:
+    parameters:
+      poll:
+        type: entity:poll_system
+
+poll_system.option_add:
+  path: '/admin/content/poll-system/{poll}/options/add'
+  defaults:
+    _form: '\Drupal\poll_system\Form\PollOptionForm'
+    _title: 'Add poll option'
+  requirements:
+    _permission: 'administer poll system'
+  options:
+    parameters:
+      poll:
+        type: entity:poll_system
+
+poll_system.option_edit:
+  path: '/admin/content/poll-system/{poll}/options/{option}/edit'
+  defaults:
+    _form: '\Drupal\poll_system\Form\PollOptionForm'
+    _title: 'Edit poll option'
+  requirements:
+    _permission: 'administer poll system'
+  options:
+    parameters:
+      poll:
+        type: entity:poll_system
+      option:
+        type: entity:poll_system_option
+
+poll_system.option_delete:
+  path: '/admin/content/poll-system/{poll}/options/{option}/delete'
+  defaults:
+    _form: '\Drupal\poll_system\Form\PollOptionDeleteForm'
+    _title: 'Delete poll option'
+  requirements:
+    _permission: 'administer poll system'
+  options:
+    parameters:
+      poll:
+        type: entity:poll_system
+      option:
+        type: entity:poll_system_option
+
+
+poll_system.results:
+  path: '/admin/content/poll-system/{poll}/results'
+  defaults:
+    _controller: '\Drupal\poll_system\Controller\PollSystemController::pollResults'
+    _title: 'Poll Results'
+  requirements:
+    _permission: 'administer poll system'
+  options:
+    parameters:
+      poll:
+        type: entity:poll_system
+
+poll_system.vote:
+  path: '/poll-system/{poll}/vote'
+  defaults:
+    _controller: '\Drupal\poll_system\Controller\PollSystemController::vote'
+    _title: 'Vote'
+  requirements:
+    _permission: 'vote in polls'
+  options:
+    parameters:
+      poll:
+        type: entity:poll_system
+
+poll_system.display:
+  path: '/poll-system/{poll}/view'
+  defaults:
+    _controller: '\Drupal\poll_system\Controller\PollSystemController::displayPoll'
+    _title_callback: '\Drupal\poll_system\Controller\PollSystemController::pollTitle'
+  requirements:
+    _permission: 'vote in polls'
+  options:
+    parameters:
+      poll:
+        type: entity:poll_system
+
+poll_system.public_list:
+  path: '/poll-system'
+  defaults:
+    _controller: '\Drupal\poll_system\Controller\PollSystemController::publicPollList'
+    _title: 'Available Polls'
+  requirements:
+    _permission: 'vote in polls'

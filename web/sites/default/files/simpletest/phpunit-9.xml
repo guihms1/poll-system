@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="Drupal\Tests\poll_system\Functional\Rest\PollSystemResourceTest" file="/app/web/modules/custom/poll_system/tests/src/Functional/Rest/PollSystemResourceTest.php" tests="2" assertions="6" errors="0" warnings="0" failures="2" skipped="0" time="5.324666">
+    <testcase name="testGetPolls" class="Drupal\Tests\poll_system\Functional\Rest\PollSystemResourceTest" classname="Drupal.Tests.poll_system.Functional.Rest.PollSystemResourceTest" file="/app/web/modules/custom/poll_system/tests/src/Functional/Rest/PollSystemResourceTest.php" line="57" assertions="3" time="2.699940">
+      <failure type="PHPUnit\Framework\ExpectationFailedException">Drupal\Tests\poll_system\Functional\Rest\PollSystemResourceTest::testGetPolls
+User apiuser successfully logged in.
+Failed asserting that false is true.
+
+/app/vendor/phpunit/phpunit/src/Framework/Constraint/Constraint.php:122
+/app/vendor/phpunit/phpunit/src/Framework/Constraint/Constraint.php:56
+/app/web/core/tests/Drupal/Tests/UiHelperTrait.php:182
+/app/web/modules/custom/poll_system/tests/src/Functional/Rest/PollSystemResourceTest.php:90
+/app/vendor/phpunit/phpunit/src/Framework/TestResult.php:729</failure>
+    </testcase>
+    <testcase name="testPostVote" class="Drupal\Tests\poll_system\Functional\Rest\PollSystemResourceTest" classname="Drupal.Tests.poll_system.Functional.Rest.PollSystemResourceTest" file="/app/web/modules/custom/poll_system/tests/src/Functional/Rest/PollSystemResourceTest.php" line="116" assertions="3" time="2.624726">
+      <failure type="PHPUnit\Framework\ExpectationFailedException">Drupal\Tests\poll_system\Functional\Rest\PollSystemResourceTest::testPostVote
+User admin successfully logged in.
+Failed asserting that false is true.
+
+/app/vendor/phpunit/phpunit/src/Framework/Constraint/Constraint.php:122
+/app/vendor/phpunit/phpunit/src/Framework/Constraint/Constraint.php:56
+/app/web/core/tests/Drupal/Tests/UiHelperTrait.php:182
+/app/web/modules/custom/poll_system/tests/src/Functional/Rest/PollSystemResourceTest.php:147
+/app/vendor/phpunit/phpunit/src/Framework/TestResult.php:729</failure>
+    </testcase>
+  </testsuite>
+</testsuites>

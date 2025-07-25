@@ -1,0 +1,49 @@
+<?php
+/**
+ * Implements hook_schema().
+ */
+function poll_system_schema() {
+  $schema['poll_system_vote'] = [
+    'description' => 'Stores votes for polls.',
+    'fields' => [
+      'id' => [
+        'type' => 'serial',
+        'not null' => TRUE,
+      ],
+      'poll_id' => [
+        'type' => 'int',
+        'not null' => TRUE,
+      ],
+      'option_id' => [
+        'type' => 'int',
+        'not null' => TRUE,
+      ],
+      'uid' => [
+        'type' => 'int',
+        'not null' => TRUE,
+      ],
+      'ip_address' => [
+        'type' => 'varchar',
+        'length' => 64,
+        'not null' => FALSE,
+      ],
+      'timestamp' => [
+        'type' => 'int',
+        'not null' => TRUE,
+      ],
+    ],
+    'primary key' => ['id'],
+  ];
+
+  return $schema;
+}
+
+/**
+ * Create poll_system_vote table if it does not exist.
+ */
+function poll_system_update_8001() {
+  $schema = poll_system_schema();
+  if (!\Drupal::database()->schema()->tableExists('poll_system_vote')) {
+    \Drupal::database()->schema()->createTable('poll_system_vote', $schema['poll_system_vote']);
+  }
+}

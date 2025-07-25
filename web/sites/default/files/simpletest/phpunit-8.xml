@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="Drupal\Tests\poll_system\Functional\Rest\PollSystemResourceTest" file="/app/web/modules/custom/poll_system/tests/src/Functional/Rest/PollSystemResourceTest.php" tests="2" assertions="6" errors="1" warnings="0" failures="1" skipped="0" time="5.110287">
+    <testcase name="testGetPolls" class="Drupal\Tests\poll_system\Functional\Rest\PollSystemResourceTest" classname="Drupal.Tests.poll_system.Functional.Rest.PollSystemResourceTest" file="/app/web/modules/custom/poll_system/tests/src/Functional/Rest/PollSystemResourceTest.php" line="56" assertions="3" time="2.502608">
+      <error type="Behat\Mink\Exception\ExpectationException">Drupal\Tests\poll_system\Functional\Rest\PollSystemResourceTest::testGetPolls
+Behat\Mink\Exception\ExpectationException: Current response status code is 404, but 200 expected.
+
+/app/vendor/behat/mink/src/WebAssert.php:888
+/app/vendor/behat/mink/src/WebAssert.php:145
+/app/web/modules/custom/poll_system/tests/src/Functional/Rest/PollSystemResourceTest.php:90
+/app/vendor/phpunit/phpunit/src/Framework/TestResult.php:729</error>
+    </testcase>
+    <testcase name="testPostVote" class="Drupal\Tests\poll_system\Functional\Rest\PollSystemResourceTest" classname="Drupal.Tests.poll_system.Functional.Rest.PollSystemResourceTest" file="/app/web/modules/custom/poll_system/tests/src/Functional/Rest/PollSystemResourceTest.php" line="104" assertions="3" time="2.607679">
+      <failure type="PHPUnit\Framework\ExpectationFailedException">Drupal\Tests\poll_system\Functional\Rest\PollSystemResourceTest::testPostVote
+User admin successfully logged in.
+Failed asserting that false is true.
+
+/app/vendor/phpunit/phpunit/src/Framework/Constraint/Constraint.php:122
+/app/vendor/phpunit/phpunit/src/Framework/Constraint/Constraint.php:56
+/app/web/core/tests/Drupal/Tests/UiHelperTrait.php:182
+/app/web/modules/custom/poll_system/tests/src/Functional/Rest/PollSystemResourceTest.php:135
+/app/vendor/phpunit/phpunit/src/Framework/TestResult.php:729</failure>
+    </testcase>
+  </testsuite>
+</testsuites>

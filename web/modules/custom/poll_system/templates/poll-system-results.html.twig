@@ -1,0 +1,45 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display poll results.
+ *
+ * Available variables:
+ * - poll: The poll entity.
+ * - results: An array of poll result options.
+ * - total_votes: The total number of votes.
+ */
+#}
+
+<div class="poll-system-results">
+  <h2>{{ 'Results for'|t }}: {{ poll.label }}</h2>
+
+  {% if total_votes > 0 %}
+
+    <table class="poll-system__results-table" style="width: 100%; border-collapse: collapse; margin-top: 20px;">
+      <tr style="background-color: #f0f0f0;">
+        <th style="border: 1px solid #cccccc; padding: 10px; text-align: left;">Option</th>
+        <th style="border: 1px solid #cccccc; padding: 10px; text-align: center;">Votes</th>
+        <th style="border: 1px solid #cccccc; padding: 10px; text-align: center;">Percentage</th>
+      </tr>
+      {% for result in results %}
+        <tr>
+          <td style="border: 1px solid #cccccc; padding: 10px;"><b>{{ result.title }}</b></td>
+          <td style="border: 1px solid #cccccc; padding: 10px; text-align: center;">{{ result.votes }}</td>
+          <td style="border: 1px solid #cccccc; padding: 10px; text-align: center;">{{ result.percentage }}%</td>
+        </tr>
+      {% endfor %}
+    </table>
+
+    <div class="poll-system-results__total">
+      {{ 'Total votes:'|t }} {{ total_votes }}
+    </div>
+  {% else %}
+    <div class="poll-system-results__no-votes">
+      {{ 'No votes yet.'|t }}
+    </div>
+  {% endif %}
+
+  <div class="poll-system-results__actions">
+    <a href="{{ path('poll_system.list') }}" class="button">{{ 'Back to polls'|t }}</a>
+  </div>
+</div>

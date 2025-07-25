@@ -1,0 +1,13 @@
+poll_system.settings:
+  title: 'Poll System Settings'
+  description: 'Configure how polls behave.'
+  route_name: poll_system.settings
+  parent: poll_system.admin_config
+  weight: 0
+
+poll_system.admin_config:
+  title: 'Polls'
+  description: 'Settings for custom polls'
+  route_name: poll_system.settings
+  parent: system.admin_config
+  weight: 100
